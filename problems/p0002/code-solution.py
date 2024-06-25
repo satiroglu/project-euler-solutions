@@ -1,7 +1,13 @@
-solution = 0
+def sum_even_fibonacci(limit):
+    a, b = 1, 2  # Starting values of the Fibonacci sequence
+    sum_even = 0
 
-for i in range(1000):
-    if i % 3 == 0 or i % 5 == 0:
-        solution += i
+    while a <= limit:
+        if a % 2 == 0:
+            sum_even += a
+        a, b = b, a + b  # Generate the next Fibonacci number
+    return sum_even
 
-print(solution)
+
+# Set the limit to four million and print the solution
+print("The sum is:", sum_even_fibonacci(4000000))
